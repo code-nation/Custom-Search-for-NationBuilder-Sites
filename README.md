@@ -26,7 +26,7 @@ _Note: You’ll need to [create a custom theme](http://nationbuilder.com/theme_d
 
     ![Code snippet for your basic page template](basic-page-code-with-search-snippet.png)
 
-This process will give you a brand-spanking new search page similar to the [Total Environment Centre](http://www.tec.org.au/search?q=Green+Energy), which includes the necessary search form and loads the results below. You can get more creative and add the search form wherever you wish across your site - just use <a href="" target="_blank">these lines of code</a> to include the form in other locations as you please. For example, Greens Parlimentarian Dawn Walker sports a custom search tool in the top nav of her [official site](http://www.dawnwalker.org.au/search?q=health).
+This process will give you a brand-spanking new search page similar to the [Total Environment Centre](http://www.tec.org.au/search?q=Green+Energy), which includes the necessary search form and loads the results below. You can get more creative and add the search form wherever you wish across your site - just use [these lines of code](https://github.com/code-nation/Custom-Search-for-NationBuilder-Sites/blob/master/_search.html#L1-L12) to include the form in other locations as you please. For example, Greens Parlimentarian Dawn Walker sports a custom search tool in the top nav of her [official site](http://www.dawnwalker.org.au/search?q=health).
 
 ### Styling your search page
 
@@ -38,8 +38,8 @@ If your website uses a theme based on the "Aware" public theme, then you may fin
 
 ```
 <form method="get" action="/search">
-	<input name="q" type="search" placeholder="Enter keywords..." style="display: inline-block; width: 200px; height: 40px; margin-bottom: 0;">
-	<input type="submit" class="submit-button" style="height: 40px;" value="SEARCH">
+<input name="q" type="search" placeholder="Enter keywords..." style="display: inline-block; width: 200px; height: 40px; margin-bottom: 0;">
+<input type="submit" class="submit-button" style="height: 40px;" value="SEARCH">
 </form> 
 ```
 
