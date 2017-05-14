@@ -1,0 +1,54 @@
+<div class="blog-post-content">
+  <p><em>This is a guest post from Corey at <a href="http://nationbuilder.com/code_nation" target="_blank">Code Nation</a>, a highly-revered certified Architect firm based in both Melbourne, Australia and Bogotá, Colombia. Corey often pushes the boundaries of the NationBuilder framework and generously offered to share one of his own tricks with us:</em></p>
+  <div class="help-callout">
+    <p>
+      <strong>UPDATE: Monday 15 May 2017</strong>
+      <br>
+      In February this year <a href="https://customsearch.googleblog.com/2017/02/refocusing-and-looking-forward-on.html" target="_blank">Google announced a series of changes</a> to their custom search engine tools. This article has been updated to support Google's Custom Search Element V2 and to simplify the process of adding a custom search page to your NationBuilder site (it's now only 3 steps!)
+    </p>
+  </div>
+  <img src="https://d3n8a8pro7vhmx.cloudfront.net/3dna/pages/25583/attachments/original/1440033274/freshhold_blog_header.jpg?1440033274" class="padbottomless" alt="Code Nation Custom Search Blog Header" width="100%" height="auto" />
+  <p>You’ve got a growing nation full of champions and they’re kicking goals for your cause. Your site design does justice to your incredibly good-looking community of supporters (props to the <a href="http://nationbuilder.com/architects" target="_blank">architect</a>!). Your content is excellent and engagement is high. In short, you’re killing it.</p>
+  <p>But your site is getting unwieldy. You have hundreds of winning campaign updates, powerful petitions and brilliant articles submitted by your wonderful supporters, not to mention the growing tide of forum posts from your suggestion box pages. The sheer size is as impressive as it is impossible to navigate.</p>
+  <p>Adding a site search is a great way to help your supporters surf that endless stream of sensational content. Here’s how to make the magic happen with a Google custom search engine.</p>
+  <h4>Simple Steps to add search to your site</h4>
+  <p><em>Note: You’ll need to <a href="http://nationbuilder.com/theme_documentation#create_a_new_theme" target="_blank">create a custom theme</a> if you don’t already have one.</em></p>
+  <ol style="font-size: 18px;">
+    <li>
+      <p>Create a new “basic” page for your site. Call it what you want and place it as you please (the top nav is a hot option), but make sure the slug of the page is "search".</p>
+    </li>
+    <li>
+      <p>Add the partial called “<a href="" target="_blank">_search.html</a>” to your custom theme:</p>
+      <ul>
+        <li>If you have <a href="http://nationbuilder.com/how_to_sync_your_nation_s_themes_with_dropbox#connect" target="_blank">connected Dropbox to your nation</a>, then you will upload that file via the nb_sync folder in your Dropbox account.</li>
+        <li>Otherwise you can simply upload that file via the NationBuilder control panel (navigate to the relevant site, click the "theme" link, then choose "files" and add the partial using NationBuilder's simple drag and drop function).</li>
+      </ul>
+    </li>
+    <li>
+    	<p>Add the following liquid snippet to your “pages_show_basic.html” and “pages_show_basic_wide.html” files, placing the code where you want the search bar and search results to appear (see an example in the screenshot below). Again, you will either update these files via Dropbox if you have conneted it your nation, otherwise you can edit them directly via the NationBuilder control panel:</p>
+		  <p>
+  		  <samp>{% if page.slug == "search" %}</samp>
+        <br>
+  			<samp>{% include "search" %}</samp>
+        <br>
+  			<samp>{% endif %}</samp>
+      </p>
+      <img src="basic-page-code-with-search-snippet.png" class="padbottomless" alt="Code snippet for your basic page template" width="100%" height="auto">
+		</li>
+  </ol>
+  <p>This process will give you a brand-spanking new search page similar to the <a href="http://www.tec.org.au/search?q=Green+Energy" target="_blank">Total Environment Centre</a>, which includes the necessary search form and loads the results below. You can get more creative and add the search form wherever you wish across your site - just use <a href="" target="_blank">these lines of code</a> to include the form in other locations as you please. For example, Greens Parlimentarian Dawn Walker sports a custom search tool in the top nav of her <a href="http://www.dawnwalker.org.au/search?q=health" target="_blank">official site</a>.</p>
+  <h4>Styling your search page</h4>
+  <p>The code provided in step 2 above will work on any website, however the classes provided are primarily intended for use with themes based on the Bootstrap framework (the industry-standard NationBuilder base theme since its release in 2015).</p>
+  <p>If your website uses a theme based on the "Aware" public theme, then you may find <a href="" target="_blank">this code</a> more appropriate for your search form. Regardless of what theme your site uses, it is possible to apply styles via CSS to the search form and results to ensure they match your brand.</p>
+  <h4>Hiding pages from search</h4>
+  <p>If you want to hide certain pages from search then you can add the following metatag to those pages, which will tell Google and other search providers to ignore the page when indexing your site (NationBuilder automatically adds this tag to "unlisted" pages):</p>
+  <p>
+    <samp>
+      &lt;meta name="robots" content="noindex"&gt;
+    </samp>
+  </p>
+  <p>This code snippet belongs in the &lt;head&gt; section of your “layout.html”, but you’ll need to be careful to ensure that it's only added to the specific pages you wish to hide (a process which requires the use of <a href="http://nationbuilder.com/liquid_basics#tags">liquid conditionals</a>):</p>
+  <h4>Wrap Up</h4>
+  <p>This search function is just a mere foray into the world of useful navigational features. It could be used in conjunction with well-maintained archives, month/year filters, section categories and page tags.</p>
+  <p>Then again, you could always just eschew search, empty your archives and jettison your past in the fear it might <a href="https://www.washingtonpost.com/news/worldviews/wp/2015/08/03/the-four-year-old-tweet-that-came-back-to-haunt-australias-prime-minister/">bite you on the ass</a>.</p>
+</div>

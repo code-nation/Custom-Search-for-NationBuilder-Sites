@@ -1,0 +1,33 @@
+<form method="get" action="/search">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <input name="q" type="search" placeholder="Enter keywords..." class="form-control" />
+        <span class="input-group-btn">
+          <input class="btn btn-primary" type="submit" value="SEARCH" />
+        </span>
+      </div>
+    </div>
+  </div>
+</form>
+<script type="text/javascript">
+  (function() {
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+    document.getElementsByName("q").forEach(function(el){el.value = getUrlParameter("q")});
+    var cx = '{% if custom_search_id and custom_search_id != "" %}{{ custom_search_id }}{% else %}008016235122236849965:29prjnksala{% endif %}';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="row">
+  <div class="gcse-searchresults-only" data-enableAutoComplete="true" data-safeSearch="active" data-as_sitesearch="{{ site.full_url | split:'//' | last | split:'/' | first }}" data-image_as_sitesearch="{{ site.full_url | split:'//' | last | split:'/' | first }}" data-enableImageSearch="false" data-disableWebSearch="false"></div>
+</div>
